@@ -22,13 +22,16 @@ To set up and run this project locally, follow these steps:
 https://github.com/satishpwebdev/data_task.git
 
 2. **Navigate to the Project Directory**
-   cd data_task
+
+   ```sh cd data_task ```
 
 3. **Install Dependencies:**
-   yarn install
+
+   ```sh yarn install ```
 
 4. **Start Development Sever:**
-   yarn start
+
+  ```sh yarn start ```
 
 5.**Open Your Browser:**
 
@@ -44,7 +47,8 @@ Check all the visualized data:
 # Build
 
 **Run the build command:**
-yarn build
+
+```sh yarn build ```
 
 # License
 
