@@ -23,13 +23,13 @@ https://github.com/satishpwebdev/data_task.git
 
 2. **Navigate to the Project Directory**
 
-   ```sh
+```sh
    cd data_task
    ```
 
 3. **Install Dependencies:**
 
-   ```sh
+```sh
    yarn install
    ```
 
