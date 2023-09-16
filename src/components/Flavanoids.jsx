@@ -1,6 +1,8 @@
 import React from "react";
 import { WineData } from "./data";
 
+//creating functions to calculate mean
+
 function FlavanoidsMean(values) {
    const sum = values.reduce((acc, value) => acc + parseFloat(value), 0);
    return sum / values.length;
@@ -40,14 +42,18 @@ function FlavanoidsMode(values) {
 }
 
 const Flavanoids = () => {
-
+   
+   //created an array for unique alcohol values from WineData
    const uniqueAlcohols = [...new Set(WineData.map((item) => item["Alcohol"]))];
+
+   //Empty Object to store statistics of alcohols
    const statistics = {};
 
    uniqueAlcohols.forEach((alcohol) => {
       const alcoholData = WineData.filter((item) => item["Alcohol"] === alcohol);
       const flavanoidsValues = alcoholData.map((item) => item["Flavanoids"]);
 
+//storing the all the data for current alcohol class and their mean, mode, median
       statistics[`Alcohol ${alcohol}`] = {
          "Flavanoids Mean": FlavanoidsMean(flavanoidsValues).toFixed(3),
          "Flavanoids Median": FlavanoidsMedian(flavanoidsValues).toFixed(3),

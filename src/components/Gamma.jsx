@@ -1,6 +1,8 @@
 import React from "react";
 import { WineData } from "./data";
 
+//calculating the mean of values
+
 function GammaMean(values) {
    const sum = values.reduce((acc, value) => acc + parseFloat(value), 0);
    return sum / values.length;
@@ -40,16 +42,24 @@ function GammaMode(values) {
 }
 
 const Gamma = () => {
+
+   //created an array for unique alcohol values from WineData
    const uniqueAlcohols = [...new Set(WineData.map((item) => item["Alcohol"]))];
+  
    const statistics = {};
 
    uniqueAlcohols.forEach((alcohol) => {
+
+      //filtering the WineData for the current alcohol class such as 'Alcohol:1'
       const alcoholData = WineData.filter((item) => item["Alcohol"] === alcohol);
+
+      //calculating the gamma values for the current alcohol class.
       const GammaValues = alcoholData.map((item) => {
          return (item.Ash * item.Hue) / item.Magnesium;
       });
 
-      console.log("Gaam", GammaValues);
+      // console.log("Gamma", GammaValues);
+
 
       statistics[`Alcohol ${alcohol}`] = {
          "Gamma Mean": GammaMean(GammaValues).toFixed(3),
