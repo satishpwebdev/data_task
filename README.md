@@ -23,15 +23,21 @@ https://github.com/satishpwebdev/data_task.git
 
 2. **Navigate to the Project Directory**
 
-   ```sh cd data_task ```
+   ```sh
+   cd data_task
+   ```
 
 3. **Install Dependencies:**
 
-   ```sh yarn install ```
+   ```sh
+   yarn install
+   ```
 
 4. **Start Development Sever:**
 
-  ```sh yarn start ```
+```sh
+yarn start
+```
 
 5.**Open Your Browser:**
 
@@ -48,7 +54,9 @@ Check all the visualized data:
 
 **Run the build command:**
 
-```sh yarn build ```
+```sh
+yarn build
+```
 
 # License
 
