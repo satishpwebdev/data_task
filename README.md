@@ -16,7 +16,7 @@ Provide a brief description of your data visualization task. Mention its purpose
 -  [Contributing](#contributing)
 -  [License](#license)
 
-## Installation
+# Installation
 
 To set up and run this project locally, follow these steps:
 
