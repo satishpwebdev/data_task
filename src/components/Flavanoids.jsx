@@ -40,8 +40,8 @@ function FlavanoidsMode(values) {
 }
 
 const Flavanoids = () => {
-   const uniqueAlcohols = [...new Set(WineData.map((item) => item["Alcohol"]))];
 
+   const uniqueAlcohols = [...new Set(WineData.map((item) => item["Alcohol"]))];
    const statistics = {};
 
    uniqueAlcohols.forEach((alcohol) => {

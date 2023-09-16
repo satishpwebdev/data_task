@@ -3,7 +3,7 @@ import { WineData } from "./data";
 
 function GammaMean(values) {
    const sum = values.reduce((acc, value) => acc + parseFloat(value), 0);
-   return (sum / values.length);
+   return sum / values.length;
 }
 
 function GammaMedian(values) {
@@ -17,41 +17,39 @@ function GammaMedian(values) {
 }
 
 function GammaMode(values) {
-    const valueCount = {};
-    values.forEach((value) => {
-       if (valueCount[value]) {
-          valueCount[value]++;
-       } else {
-          valueCount[value] = 1;
-       }
-    });
- 
-    let mode = null;
-    let maxCount = 0;
- 
-    for (const value in valueCount) {
-       if (valueCount[value] > maxCount) {
-          mode = parseFloat(value);
-          maxCount = valueCount[value];
-       }
-    }
- 
-    return mode !== null ? mode.toFixed(3) : null; 
- }
- 
+   const valueCount = {};
+   values.forEach((value) => {
+      if (valueCount[value]) {
+         valueCount[value]++;
+      } else {
+         valueCount[value] = 1;
+      }
+   });
+
+   let mode = null;
+   let maxCount = 0;
+
+   for (const value in valueCount) {
+      if (valueCount[value] > maxCount) {
+         mode = parseFloat(value);
+         maxCount = valueCount[value];
+      }
+   }
+
+   return mode !== null ? mode.toFixed(3) : null;
+}
 
 const Gamma = () => {
    const uniqueAlcohols = [...new Set(WineData.map((item) => item["Alcohol"]))];
-
    const statistics = {};
 
    uniqueAlcohols.forEach((alcohol) => {
       const alcoholData = WineData.filter((item) => item["Alcohol"] === alcohol);
       const GammaValues = alcoholData.map((item) => {
-        return (item.Ash * item.Hue)/item.Magnesium
+         return (item.Ash * item.Hue) / item.Magnesium;
       });
 
-      console.log("Gaam", GammaValues)
+      console.log("Gaam", GammaValues);
 
       statistics[`Alcohol ${alcohol}`] = {
          "Gamma Mean": GammaMean(GammaValues).toFixed(3),

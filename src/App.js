@@ -11,7 +11,7 @@ function App() {
          <header className="App-header">
             <div>
                {show ? <Flavanoids /> : <Gamma />}
-               <button className="swapbutton" onClick={()=>{setShow(!show)}}>{show ? "Gamma":"Falvanoids"}</button>
+               <button className="swapbutton" onClick={()=>{setShow(!show)}}>{show ? "Gamma":"Flavanoids"}</button>
             </div>
          </header>
       </div>
